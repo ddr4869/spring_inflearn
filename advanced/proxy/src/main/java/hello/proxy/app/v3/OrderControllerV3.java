@@ -14,12 +14,13 @@ public class OrderControllerV3 {
         this.orderService = orderService;
     }
 
-    @GetMapping("/v2/request")
+    @GetMapping("/v3/request")
     public String request(@RequestParam("itemId")  String itemId) {
+        log.info("!!! V3 !!!");
         orderService.orderItem(itemId);
         return "ok";
     }
-    @GetMapping("/v2/no-log")
+    @GetMapping("/v3/no-log")
     public String noLog() {
         return "ok";
     }
