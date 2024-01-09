@@ -1,10 +1,13 @@
 package tom.study.api.controller.customer.model;
 
 import jakarta.validation.constraints.NotEmpty;
+import lombok.Getter;
+import lombok.Setter;
 import tom.study.domain.customer.model.entity.Customer;
 
+@Getter
+@Setter
 public class CustomerCreateRequest {
-
     @NotEmpty
     private String customerName;
     @NotEmpty
@@ -26,19 +29,18 @@ public class CustomerCreateRequest {
     @NotEmpty
     private String  customerDelete;
 
-
     public Customer ModelToEntity(CustomerCreateRequest customerCreateRequest) {
         Customer customerEntity = new Customer();
-        customerEntity.setCustomerName(customerCreateRequest.customerName);
-        customerEntity.setCustomerPw(customerCreateRequest.customerPw);
-        customerEntity.setCustomerEmail(customerCreateRequest.customerEmail);
-        customerEntity.setCustomerTel(customerCreateRequest.customerTel);
-        customerEntity.setCustomerPostcode(customerCreateRequest.customerPostcode);
-        customerEntity.setCustomerAddress(customerCreateRequest.customerAddress);
-        customerEntity.setCustomerDetailAddress(customerCreateRequest.customerDetailAddress);
-        customerEntity.setCustomerGrade(customerCreateRequest.customerGrade);
-        customerEntity.setCustomerExtraAddress(customerCreateRequest.customerExtraAddress);
-        customerEntity.setCustomerDelete(customerCreateRequest.customerDelete);
+        customerEntity.setCustomerName(customerCreateRequest.getCustomerName());
+        customerEntity.setCustomerPw(customerCreateRequest.getCustomerPw());
+        customerEntity.setCustomerEmail(customerCreateRequest.getCustomerEmail());
+        customerEntity.setCustomerTel(customerCreateRequest.getCustomerTel());
+        customerEntity.setCustomerPostcode(customerCreateRequest.getCustomerPostcode());
+        customerEntity.setCustomerAddress(customerCreateRequest.getCustomerAddress());
+        customerEntity.setCustomerDetailAddress(customerCreateRequest.getCustomerDetailAddress());
+        customerEntity.setCustomerGrade(customerCreateRequest.getCustomerGrade());
+        customerEntity.setCustomerExtraAddress(customerCreateRequest.getCustomerExtraAddress());
+        customerEntity.setCustomerDelete(customerCreateRequest.getCustomerDelete());
         return customerEntity;
     }
 }

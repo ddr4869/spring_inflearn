@@ -30,7 +30,6 @@ class StudyApplicationTests {
 	@Autowired
 	CustomerRepository customerRepository;
 
-
 	@Test
 	void createReservationsTest() {
 		Reservation reservation = new Reservation();
