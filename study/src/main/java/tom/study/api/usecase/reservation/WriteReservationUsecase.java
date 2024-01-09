@@ -13,7 +13,6 @@ public class WriteReservationUsecase {
 
     private final ReservationService reservationService;
     public void execute(ReservationCreateRequest reservationCreateRequest) {
-        log.info("!execute! : {}", reservationCreateRequest.getCustomerId());
         reservationService.createReservation(reservationCreateRequest.ModelToEntity(reservationCreateRequest));
     }
 }

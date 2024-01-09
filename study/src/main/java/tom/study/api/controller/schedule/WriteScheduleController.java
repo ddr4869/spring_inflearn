@@ -19,7 +19,6 @@ public class WriteScheduleController {
 
     @PostMapping("/create")
     public void createSchedule(@RequestBody @Valid ScheduleCreateRequest scheduleCreateRequest) {
-        log.info(" !! TEST !!");
         writeScheduleUsecase.execute(scheduleCreateRequest);
     }
 }

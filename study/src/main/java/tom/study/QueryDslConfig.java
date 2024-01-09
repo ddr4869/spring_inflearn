@@ -16,7 +16,6 @@ public class QueryDslConfig {
 
     @Bean
     public JPAQueryFactory jpaQueryFactory() {
-        log.info("Config queryFactory: {}", jpaQueryFactory);
         return new JPAQueryFactory(entityManager);
     }
 }

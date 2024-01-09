@@ -15,7 +15,6 @@ public class ReservationService {
     private final ReservationRepository reservationRepository;
 
     public void createReservation(Reservation reservation) {
-        log.info("reservation.customerId:{}",reservation.getCustomerId());
         reservationRepository.save(reservation);
     }
 

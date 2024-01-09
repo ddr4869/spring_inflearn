@@ -14,7 +14,6 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
 
     public void createUser(Customer customer) {
-        log.info(" here : {}", customer.getCustomerName());
         customerRepository.save(customer);
     }
 }

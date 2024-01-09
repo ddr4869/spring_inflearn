@@ -20,7 +20,6 @@ public class CustomScheduleRepositoryImpl implements CustomScheduleRepository {
     private final JPAQueryFactory jpaQueryFactory;
 
     public List<Schedule> CustomersReservateSchdules(String customName) {
-        log.info("Schedule Repo Test");
         QSchedule qSchedule = QSchedule.schedule;
         QCustomer qCustomer = QCustomer.customer;
         QReservation qReservation = QReservation.reservation;

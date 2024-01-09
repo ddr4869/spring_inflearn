@@ -12,7 +12,6 @@ import tom.study.domain.schedule.repository.ScheduleRepository;
 public class ScheduleService {
     private final ScheduleRepository scheduleRepository;
     public void createSchedule(Schedule schedule) {
-        log.info("!!TheaterId-service!!: {}", schedule.getTheaterId());
         scheduleRepository.save(schedule);
     }
 }

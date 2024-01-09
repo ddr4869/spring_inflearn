@@ -23,7 +23,6 @@ public class ScheduleCreateRequest {
         schedule.setMovieId(scheduleCreateRequest.getMovieId());
         schedule.setScreenId(scheduleCreateRequest.getScreenId());
         schedule.setTheaterId(scheduleCreateRequest.getTheaterId());
-        log.info("!!TheaterId!!: {}", scheduleCreateRequest.getTheaterId());
         return schedule;
     }
 

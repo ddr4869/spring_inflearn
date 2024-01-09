@@ -18,7 +18,6 @@ public class WriteReservationController {
 
     @PostMapping("/create")
     public void createReservation(@RequestBody ReservationCreateRequest reservationCreateRequest) {
-        log.info("reservationCreateRequest.customerId:{}",reservationCreateRequest);
         writeReservationUsecase.execute(reservationCreateRequest);
     }
 }

@@ -31,7 +31,6 @@ public class CustomReservationRepositoryImpl implements CustomReservationReposit
     }
 
     public List<Reservation> findReservations3(String customName) {
-        log.info("queryFactory: {}", queryFactory);
         QReservation r = QReservation.reservation;
         QCustomer c = QCustomer.customer;
         return queryFactory.selectFrom(r).
