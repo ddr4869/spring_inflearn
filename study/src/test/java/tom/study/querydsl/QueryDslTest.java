@@ -7,9 +7,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import tom.study.domain.customer.model.entity.Customer;
 import tom.study.domain.reservation.model.entity.QReservation;
 import tom.study.domain.reservation.model.entity.Reservation;
 import tom.study.domain.reservation.repository.ReservationRepository;
+import tom.study.domain.schedule.model.entity.QSchedule;
+import tom.study.domain.schedule.model.entity.Schedule;
+import tom.study.domain.schedule.repository.ScheduleRepository;
 
 import java.util.List;
 
@@ -20,6 +24,8 @@ public class QueryDslTest {
 
     @Autowired
     ReservationRepository reservationRepository;
+    @Autowired
+    ScheduleRepository scheduleRepository;
 
     @Test
     void QueryDSLTest() {
@@ -43,6 +49,14 @@ public class QueryDslTest {
         for(Reservation r: reservations) {
             log.info("{}, {}, {}, {}",r.getReservationPaymentId(), r.getCustomerId(),
                     r.getReservationPaymentScheduleId(), r.getReservationPaymentFilm());
+        }
+    }
+
+    @Test
+    void QueryDSLTest4() {
+        List<Schedule> reservations = scheduleRepository.CustomersReservateSchdules("tom");
+        for(Schedule s: reservations) {
+            log.info("{}", s.toString());
         }
     }
 }

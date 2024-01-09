@@ -3,18 +3,19 @@ package tom.study.domain.reservation.model.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import tom.study.domain.customer.model.entity.Customer;
 
+@Data
 @Entity
 @Table
 @Getter @Setter
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long reservationPaymentId;
-
+    private Long reservationPaymentId;
 
     @Column
     @NotEmpty
@@ -22,7 +23,7 @@ public class Reservation {
 
     @Column
     @NotNull
-    private long reservationPaymentScheduleId;
+    private Long reservationPaymentScheduleId;
 
     @Column
     @NotEmpty

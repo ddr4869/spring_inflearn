@@ -33,15 +33,15 @@ class StudyApplicationTests {
 	@Test
 	void createReservationsTest() {
 		Reservation reservation = new Reservation();
-		for(int i=0;i<30;i++) {
+		for(int i=0;i<20;i++) {
 			reservation.setReservationPaymentFilm("TEST"+String.valueOf(i));
-			reservation.setReservationPaymentScheduleId(1000+i);
-			if (i%2==0) {
-				reservation.setCustomerId("CustomerID"+String.valueOf(i));
-			} else {
+			reservation.setReservationPaymentScheduleId((long) (1000+i));
+			if (i%4==0) {
 				reservation.setCustomerId("tom");
+			} else {
+				reservation.setCustomerId("CustomerID"+String.valueOf(i));
 			}
-			reservation.setReservationPaymentId(1000+i);
+			reservation.setReservationPaymentId((long) (i));
 			reservationService.createReservation(reservation);
 		}
 	}
@@ -49,9 +49,9 @@ class StudyApplicationTests {
 	@Test
 	void createOneReservationsTest() {
 		Reservation reservation = new Reservation();
-		reservation.setReservationPaymentScheduleId(1000);
+		reservation.setReservationPaymentScheduleId(1000L);
 		reservation.setCustomerId("tom");
-		reservation.setReservationPaymentId(1000);
+		reservation.setReservationPaymentId(1000L);
 		reservation.setReservationPaymentFilm("톰과제리");
 		reservationService.createReservation(reservation);
 

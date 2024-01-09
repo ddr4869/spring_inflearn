@@ -1,6 +1,7 @@
 package tom.study.api.controller.reservation.model;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import tom.study.domain.reservation.model.entity.Reservation;
@@ -10,8 +11,8 @@ public class ReservationCreateRequest {
     @NotEmpty
     private String customerId;
 
-    @NotEmpty
-    private long reservationPaymentScheduleId;
+    @NotNull
+    private Long reservationPaymentScheduleId;
 
     @NotEmpty
     private String reservationPaymentFilm;

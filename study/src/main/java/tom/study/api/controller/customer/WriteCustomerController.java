@@ -1,5 +1,6 @@
 package tom.study.api.controller.customer;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +16,7 @@ public class WriteCustomerController {
     private final WriteCustomerUsecase writeCustomerUsercase;
 
     @PostMapping("/create")
-    public void createCustomer(@RequestBody CustomerCreateRequest customerCreateRequest) {
+    public void createCustomer(@RequestBody @Valid CustomerCreateRequest customerCreateRequest) {
         writeCustomerUsercase.execute(customerCreateRequest);
     }
 
