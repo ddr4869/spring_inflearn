@@ -1,4 +1,4 @@
-package tom.study;
+package tom.study.common.config.querydsl;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;

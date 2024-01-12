@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import tom.study.api.controller.customer.model.CustomerLoginRequest;
 import tom.study.domain.customer.model.entity.Customer;
 import tom.study.domain.customer.repository.CustomerRepository;
 
@@ -15,5 +16,9 @@ public class CustomerService {
 
     public void createUser(Customer customer) {
         customerRepository.save(customer);
+    }
+
+    public void loginUser(CustomerLoginRequest customerLoginRequest) {
+        //customerRepository.save(customer);
     }
 }

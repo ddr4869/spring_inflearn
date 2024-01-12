@@ -15,6 +15,7 @@ import tom.study.domain.reservation.repository.ReservationRepository;
 import tom.study.domain.reservation.service.ReservationService;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @SpringBootTest
@@ -87,10 +88,13 @@ class StudyApplicationTests {
 	}
 
 	@Test
-	void queryReservationCustomerTest() {
-		Reservation reservation =  reservationRepository.findByReservationPaymentFilm("톰과제리");
-		Customer customer = customerRepository.findByCustomerName(reservation.getCustomerId());
-		log.info("{}",customer.toString());
+	void queryReservationCustomerTest3() {
+		Customer customer = customerRepository.findByCustomerName("dustin").orElseThrow(() -> new IllegalArgumentException("qwe"));
+		Customer mockCustomer = new Customer();
+		Customer orElseCustomer = new Customer();
+		mockCustomer.setCustomerName("낄낄커스토머");
+		orElseCustomer = Optional.ofNullable(customer).orElse(mockCustomer);
+		log.info("{}",orElseCustomer.getCustomerName());
 	}
 
 	@Test

@@ -30,8 +30,4 @@ public class CustomScheduleRepositoryImpl implements CustomScheduleRepository {
                 where(qReservation.customerId.eq(customName)).
                 fetch();
     }
-
-    public void CustomersReservateSchdules2(String customName) {
-    }
-
 }

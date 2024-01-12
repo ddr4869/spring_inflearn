@@ -7,11 +7,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import tom.study.domain.customer.model.entity.Customer;
+import tom.study.domain.item.entity1.AlbumRepository;
+import tom.study.domain.item.entity1.Album;
+import tom.study.domain.item.entity2.Parent;
 import tom.study.domain.reservation.model.entity.QReservation;
 import tom.study.domain.reservation.model.entity.Reservation;
 import tom.study.domain.reservation.repository.ReservationRepository;
-import tom.study.domain.schedule.model.entity.QSchedule;
 import tom.study.domain.schedule.model.entity.Schedule;
 import tom.study.domain.schedule.repository.ScheduleRepository;
 
@@ -59,4 +60,12 @@ public class QueryDslTest {
             log.info("{}", s.toString());
         }
     }
+    @Test
+    void findReservationTest4() {
+        List<Reservation> reservations = reservationRepository.findReservations4("tom");
+        for(Reservation r: reservations) {
+            log.info("{}", r.toString());
+        }
+    }
+
 }

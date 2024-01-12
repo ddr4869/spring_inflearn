@@ -10,5 +10,4 @@ import java.util.List;
 
 public interface CustomScheduleRepository {
     List<Schedule> CustomersReservateSchdules(String customName);
-    void CustomersReservateSchdules2(String customName);
 }

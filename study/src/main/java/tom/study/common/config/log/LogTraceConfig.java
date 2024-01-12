@@ -1,4 +1,4 @@
-package tom.study;
+package tom.study.common.config.log;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

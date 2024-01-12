@@ -9,4 +9,6 @@ public interface CustomReservationRepository {
     List<Reservation> findReservations();
     List<Tuple> findReservations2();
     List<Reservation> findReservations3(String customName);
+
+    List<Reservation> findReservations4(String customName);
 }
