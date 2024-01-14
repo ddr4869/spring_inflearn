@@ -58,6 +58,6 @@ public class Customer {
     @NotEmpty
     private String customerDelete;
 
-//    @OneToMany(mappedBy = "customer")
+//    @OneToMany(mappedBy = "user")
 //    private List<Reservation> reservations;
 }

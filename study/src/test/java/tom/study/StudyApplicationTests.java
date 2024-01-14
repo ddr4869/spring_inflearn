@@ -24,8 +24,8 @@ class StudyApplicationTests {
 
 	@Autowired
 	ReservationService reservationService;
-	@Autowired
-	CustomerService customerService;
+//	@Autowired
+//	CustomerService customerService;
 	@Autowired
 	ReservationRepository reservationRepository;
 	@Autowired

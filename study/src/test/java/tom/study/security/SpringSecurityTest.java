@@ -10,6 +10,11 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import tom.study.common.config.security.UserDetailsServiceImpl;
+import tom.study.domain.user.user.model.entity.Authority;
+import tom.study.domain.user.user.model.entity.User;
+import tom.study.domain.user.user.repository.UserRepository;
+import tom.study.domain.user.user.repository.custom.AuthorityRepository;
+import tom.study.domain.user.user.service.UserService;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -22,6 +27,22 @@ public class SpringSecurityTest {
     @Autowired
     UserDetailsServiceImpl userDetailsService;
     //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    @Autowired
+    UserRepository userRepository;
+    @Autowired
+    AuthorityRepository authorityRepository;
+    @Test
+    public void CreateUser() {
+        User user = new User();
+        user.setUsername("test0");
+        user.setPassword("1234");
+        userRepository.save(user);
+
+        Authority authority = new Authority();
+        authority.setName("Read");
+        authority.setUser(user);
+        authorityRepository.save(authority);
+    }
 
     @Test
     public void securityTest1() {

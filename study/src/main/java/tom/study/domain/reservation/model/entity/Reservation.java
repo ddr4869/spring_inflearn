@@ -30,5 +30,5 @@ public class Reservation {
     private String reservationPaymentFilm;
 
 //    @ManyToOne
-//    private Customer customer;
+//    private Customer user;
 }

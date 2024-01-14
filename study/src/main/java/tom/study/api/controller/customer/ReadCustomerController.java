@@ -10,16 +10,16 @@ import tom.study.api.usecase.customer.ReadCustomerUsecase;
 import tom.study.api.controller.customer.model.CustomerLoginRequest;
 
 @RestController
-@RequestMapping("/api/customer")
+@RequestMapping("/api/user")
 @RequiredArgsConstructor
 public class ReadCustomerController {
     private ReadCustomerUsecase readCustomerUsecase;
 
-    @PostMapping("/login")
-    public void login(@RequestBody @Valid CustomerLoginRequest customerLoginRequest) {
-
-        //readCustomerUsecase.execute(customerLoginRequest);
-    }
+//    @PostMapping("/login")
+//    public void login(@RequestBody @Valid CustomerLoginRequest customerLoginRequest) {
+//
+//        //readCustomerUsecase.execute(customerLoginRequest);
+//    }
 
 
 }

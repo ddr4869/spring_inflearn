@@ -25,21 +25,19 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests((authorizeRequests) ->
-                        authorizeRequests.requestMatchers("/", "/login**").permitAll()
-
-
-                        .requestMatchers("/api/schedule").hasRole("test"));
+//    @Bean
+//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//        http
+//                .csrf(AbstractHttpConfigurer::disable)
+//                .authorizeHttpRequests((authorizeRequests) ->
+//                        authorizeRequests.requestMatchers("/", "/login**", "/error", "/api/customer/**").permitAll()
+//                        .requestMatchers("/api/user").hasRole("test"))
 //                .exceptionHandling((exceptionConfig) ->
 //                        exceptionConfig.authenticationEntryPoint(unauthorizedEntryPoint).accessDeniedHandler(accessDeniedHandler)
-//                ); // 401 403 관련 예외처리
-
-        return http.build();
-    }
+//              ); // 401 403 관련 예외처리
+//
+//        return http.build();
+//    }
 
     @Bean
     public UserDetailsServiceImpl userDetailsService() {
@@ -48,10 +46,10 @@ public class SecurityConfig {
         return new UserDetailsServiceImpl(List.of(tom, richard));
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-    }
+//    @Bean
+//    public PasswordEncoder passwordEncoder() {
+//        return NoOpPasswordEncoder.getInstance();
+//    }
 
     private final AuthenticationEntryPoint unauthorizedEntryPoint =
             (request, response, authException) -> {

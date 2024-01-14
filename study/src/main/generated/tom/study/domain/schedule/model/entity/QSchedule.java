@@ -17,7 +17,7 @@ public class QSchedule extends EntityPathBase<Schedule> {
 
     private static final long serialVersionUID = -1732003089L;
 
-    public static final QSchedule schedule = new QSchedule("schedule");
+    public static final QSchedule schedule = new QSchedule("user");
 
     public final NumberPath<Long> movieId = createNumber("movieId", Long.class);
 
